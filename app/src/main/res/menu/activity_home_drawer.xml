@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:checked="true"
+            android:title="Home"
+            android:visible="false"/>
+
+        <item
+            android:id="@+id/user_details"
+            android:visible="false"
+            android:title="User Details">
+            <menu>
+                <item
+                    android:id="@+id/view_details"
+                    android:title="View Details"
+                    android:visible="false">
+                </item>
+                <item
+                    android:id="@+id/edit_details"
+                    android:title="Edit Details"
+                    android:visible="false">
+                </item>
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/attendance"
+            android:visible="false"
+            android:title="Attendance">
+            <menu>
+                <item
+                    android:id="@+id/view_attendance"
+                    android:title="View Attendance"
+                    android:visible="false">
+                </item>
+                <item
+                    android:id="@+id/view_defaulter_list"
+                    android:title="View Defaulter List"
+                    android:visible="false">
+                </item>
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/course_structure"
+            android:visible="false"
+            android:title="Course Structure">
+            <menu>
+                <item
+                    android:id="@+id/view_course_structure"
+                    android:title="View Course Structure">
+                </item>
+            </menu>
+        </item>
+    </group>
+</menu>

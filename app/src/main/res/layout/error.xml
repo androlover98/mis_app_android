@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/white_overlay"
+>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_msg"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/err"/>
+    <Button
+        android:id="@+id/refresh_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonshape"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/button_text"
+        android:textSize="@dimen/button_text_size"
+        android:text="@string/action_refresh" />
+
+</LinearLayout>
