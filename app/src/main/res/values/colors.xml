@@ -11,8 +11,14 @@
     <color name="green">#00FF00</color>
     <color name="blue">#0000FF</color>
     <color name="yellow">#FFFF00</color>
+    <color name="grey">#AAAAAA</color>
+    <color name="grey_dark">#666666</color>
+    <color name="black">#000</color>
 
     <color name="colorTextPrimary">#FFFFFF</color>
     <color name="colorTextDisable">#66FFFFFF</color>
+
+    <color name="details_background1">#ABC</color>
+    <color name="details_background2">#FFF</color>
 
 </resources>

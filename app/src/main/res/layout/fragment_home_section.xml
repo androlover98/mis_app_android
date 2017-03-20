@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Button
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/section_button"
+    style="?android:textAppearanceSmall"
+    android:layout_width="80dp"
+    android:layout_marginLeft="@dimen/section_left_margin"
+    android:layout_height="25dp"
+    android:background="@drawable/buttonshape"
+    android:layout_marginTop="20dp"
+    android:textColor="@color/button_text"
+    android:textSize="@dimen/small_text"
+    android:text="26-07-2016" />

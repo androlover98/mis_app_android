@@ -45,6 +45,10 @@
         <activity
             android:name=".javac.HomeActivity"
             android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".javac.ViewDetails"
+            android:label="@string/title_activity_view_details"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

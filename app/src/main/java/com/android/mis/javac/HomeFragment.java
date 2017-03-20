@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.mis.R;
+import com.android.mis.controllers.ViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,7 @@ public class HomeFragment extends Fragment{
     private String mParam1;
     private String mParam2;
 
-    String[] tabTitle={"CALLS","CHAT","CONTACTS"};
+    String[] tabTitle={"NOTICES","CIRCULARS","MEETINGS"};
     int[] unreadCount={0,5,0};
 
 
@@ -96,42 +97,13 @@ public class HomeFragment extends Fragment{
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
-        adapter.addFrag(new HomeTabsFragment(), "NOTICES");
-        adapter.addFrag(new HomeTabsFragment(), "CIRCULARS");
-        adapter.addFrag(new HomeTabsFragment(), "MEETINGS");
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+        adapter.addFrag(new HomeTabsFragment("notice"), "NOTICES");
+        adapter.addFrag(new HomeTabsFragment("circular"), "CIRCULARS");
+        adapter.addFrag(new HomeTabsFragment("meetings"), "MEETINGS");
         viewPager.setAdapter(adapter);
     }
 
-
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFrag(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
-        }
-    }
 
     private View prepareTabView(int pos) {
         View view = getActivity().getLayoutInflater().inflate(R.layout.custom_tab,null);
@@ -161,8 +133,5 @@ public class HomeFragment extends Fragment{
 
             tabLayout.getTabAt(i).setCustomView(prepareTabView(i));
         }
-
-
     }
-
 }

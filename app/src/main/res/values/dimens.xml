@@ -19,4 +19,24 @@
 
     <dimen name="large_text">16sp</dimen>
     <dimen name="medium_text">14sp</dimen>
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="very_small_text">10sp</dimen>
+    <dimen name="very_very_small_text">8sp</dimen>
+
+
+    <dimen name="section_left_margin">2dp</dimen>
+
+    <!-- Post(Notice,Circular,Meetings) -->
+    <dimen name="post">150dp</dimen>
+    <dimen name="post_upper_part">40dp</dimen>
+    <dimen name="post_text_size_1">14sp</dimen>
+    <dimen name="post_text_size_2">12sp</dimen>
+    <dimen name="post_text_size_3">10sp</dimen>
+    <dimen name="post_lower_part">100dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="key_size">14sp</dimen>
+    <dimen name="val_size">14sp</dimen>
+
+    <dimen name="padding_in_details">8dp</dimen>
 </resources>
