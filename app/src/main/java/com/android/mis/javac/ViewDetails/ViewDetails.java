@@ -1,4 +1,4 @@
-package com.android.mis.javac;
+package com.android.mis.javac.ViewDetails;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -6,23 +6,19 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.mis.R;
 import com.android.mis.controllers.ViewPagerAdapter;
+import com.android.mis.javac.MoveToActivityFragment;
 import com.android.mis.utils.Callback;
 import com.android.mis.utils.NetworkRequest;
 import com.android.mis.utils.SessionManagement;
@@ -35,8 +31,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 public class ViewDetails extends AppCompatActivity implements Callback {
 
@@ -113,6 +107,31 @@ public class ViewDetails extends AppCompatActivity implements Callback {
             switch (list.get(i)){
                 case "PERSONAL":
                     adapter.addFrag(new PersonalDetailsFragment(json.getJSONObject("personal"),auth),list.get(i));
+                    break;
+                case "ADDRESS":
+                    adapter.addFrag(new AddressDetailsFragment(json,auth),list.get(i));
+                    break;
+                case "ADMISSION":
+                    adapter.addFrag(new AdmissionDetailsFragment(json.getJSONObject("admission")),list.get(i));
+                    break;
+                case "FEE":
+                    adapter.addFrag(new FeeDetailsFragment(json.getJSONObject("fee")),list.get(i));
+                    break;
+                case "BANK":
+                    adapter.addFrag(new BankDetailsFragment(json.getJSONObject("bank")),list.get(i));
+                    break;
+                case "FAMILY":
+                    if(auth.contentEquals("stu")){
+                        adapter.addFrag(new StuFamilyDetailsFragment(),list.get(i));
+                    }
+                    else{
+                        adapter.addFrag(new EmpFamilyDetailsFragment(json),list.get(i));
+                    }
+                    break;
+                case "STAY":
+                    adapter.addFrag(new StayDetailsFragment(json),list.get(i));
+                    break;
+                case "EDUCATION":
                     break;
                 default:
                     adapter.addFrag(new MoveToActivityFragment(),list.get(i));

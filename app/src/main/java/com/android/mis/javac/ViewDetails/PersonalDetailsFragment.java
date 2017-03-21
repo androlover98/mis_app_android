@@ -1,4 +1,4 @@
-package com.android.mis.javac;
+package com.android.mis.javac.ViewDetails;
 
 
 import android.os.Bundle;
