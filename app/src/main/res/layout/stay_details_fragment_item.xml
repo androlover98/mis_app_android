@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/item"
     android:gravity="center_vertical"
     android:padding="@dimen/padding_in_details">
 
@@ -17,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="15 Sep 2009"
+            android:textSize="@dimen/small_text"
             android:textStyle="bold"/>
         <ImageView
             android:layout_width="wrap_content"
@@ -28,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="15 Sep 2009"
+            android:textSize="@dimen/small_text"
             android:textStyle="bold"/>
 
     </LinearLayout>

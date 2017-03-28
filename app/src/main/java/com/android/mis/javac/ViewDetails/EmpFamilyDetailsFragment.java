@@ -37,7 +37,7 @@ public class EmpFamilyDetailsFragment extends Fragment {
         for(int i=0;i<familyMembers.length();i++)
         {
             JSONObject member = familyMembers.getJSONObject(i);
-            familyMemberArrayList.add(new FamilyMember(member.getString("name"),member.getString("relationship"),member.getString("dob"),member.getString("profession"),member.getString("postal_address"),member.getString("active_inactive"),member.getString("photopath")));
+            familyMemberArrayList.add(new FamilyMember(member.getString("name"),member.getString("relationship"),member.getString("dob"),member.getString("profession"),member.getString("present_post_addr"),member.getString("active_inactive"),member.getString("photopath"),i));
         }
     }
 
@@ -49,7 +49,7 @@ public class EmpFamilyDetailsFragment extends Fragment {
 
         recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
 
-        FamilyMemberDetailsAdapter mAdapter = new FamilyMemberDetailsAdapter(familyMemberArrayList);
+        FamilyMemberDetailsAdapter mAdapter = new FamilyMemberDetailsAdapter(familyMemberArrayList,getActivity().getApplicationContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

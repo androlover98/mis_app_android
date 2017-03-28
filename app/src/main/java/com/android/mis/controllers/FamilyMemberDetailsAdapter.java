@@ -1,5 +1,6 @@
 package com.android.mis.controllers;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Movie;
 import android.media.Image;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 
 import com.android.mis.R;
 import com.android.mis.models.FamilyMember;
+import com.android.mis.utils.CircleTransform;
+import com.android.mis.utils.Urls;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -23,6 +27,7 @@ import java.util.List;
 public class FamilyMemberDetailsAdapter extends RecyclerView.Adapter<FamilyMemberDetailsAdapter.MyViewHolder> {
 
     private List<FamilyMember> familyMembersList;
+    private Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name,relationship,dob,profession,postal_address,status;
@@ -41,8 +46,9 @@ public class FamilyMemberDetailsAdapter extends RecyclerView.Adapter<FamilyMembe
     }
 
 
-    public FamilyMemberDetailsAdapter(List<FamilyMember> familyMembersList) {
+    public FamilyMemberDetailsAdapter(List<FamilyMember> familyMembersList,Context context) {
         this.familyMembersList = familyMembersList;
+        this.context = context;
     }
 
     @Override
@@ -61,15 +67,23 @@ public class FamilyMemberDetailsAdapter extends RecyclerView.Adapter<FamilyMembe
         holder.dob.setText(member.getDateofbirth());
         holder.profession.setText(member.getProfession());
         holder.postal_address.setText(member.getPostal_address());
+
+        Picasso.with(context).load(Urls.image_base_path+member.getImage_url()).transform(new CircleTransform()).placeholder(R.mipmap.default_usr).error(R.mipmap.default_usr).resize(250,250).into(holder.pic);
+
         if(member.getStatus().toLowerCase().contentEquals("active"))
         {
-            holder.postal_address.setText("ACTIVE");
-            holder.postal_address.setTextColor(Color.GREEN);
+            holder.status.setText("ACTIVE");
+            holder.status.setTextColor(Color.GREEN);
         }
         else{
-            holder.postal_address.setText("ACTIVE");
-            holder.postal_address.setTextColor(Color.RED);
+            holder.status.setText("ACTIVE");
+            holder.status.setTextColor(Color.RED);
         }
+
+        if(member.getTag()%2 == 0)
+            holder.itemView.setBackgroundResource(R.color.details_background1);
+        else
+            holder.itemView.setBackgroundResource(R.color.details_background2);
     }
 
     @Override

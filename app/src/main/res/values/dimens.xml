@@ -44,6 +44,8 @@
     <dimen name="small_image_icon">20dp</dimen>
     <dimen name="large_image_icon">25dp</dimen>
 
-
+    <dimen name="spinner_padding">8dp</dimen>
     <dimen name="padding_in_details">8dp</dimen>
+
+    <dimen name="table_cell_padding">3dp</dimen>
 </resources>

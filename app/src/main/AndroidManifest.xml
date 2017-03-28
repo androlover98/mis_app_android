@@ -49,6 +49,14 @@
         <activity
             android:name=".javac.ViewDetails.ViewDetails"
             android:label="@string/title_activity_view_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".javac.CourseStructureActivity"
+            android:label="@string/title_activity_course_structure"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".javac.ViewCourse"
+            android:label="@string/title_activity_view_course"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

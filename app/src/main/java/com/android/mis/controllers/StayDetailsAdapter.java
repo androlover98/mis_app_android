@@ -52,6 +52,10 @@ public class StayDetailsAdapter extends RecyclerView.Adapter<StayDetailsAdapter.
         holder.to.setText(member.getTo());
         holder.address.setText(member.getAddress());
         holder.headquarters.setText(member.getHeadquarters());
+        if(member.getTag()%2 == 0)
+            holder.itemView.setBackgroundResource(R.color.details_background1);
+        else
+            holder.itemView.setBackgroundResource(R.color.details_background2);
     }
 
     @Override

@@ -39,7 +39,7 @@ public class StayDetailsFragment extends Fragment {
         for (int i=0;i<stayDetails.length();i++)
         {
             JSONObject stay = stayDetails.getJSONObject(i);
-            stayDetailsArrayList.add(new StayDetails(stay.getString("from"),stay.getString("to"),stay.getString("res_addr"),stay.getString("dist_hq_name")));
+            stayDetailsArrayList.add(new StayDetails(stay.getString("from"),stay.getString("to"),stay.getString("res_addr"),stay.getString("dist_hq_name"),i));
         }
     }
 

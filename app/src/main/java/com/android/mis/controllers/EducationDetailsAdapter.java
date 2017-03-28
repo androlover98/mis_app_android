@@ -2,6 +2,7 @@ package com.android.mis.controllers;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import com.android.mis.R;
 import com.android.mis.models.Education;
 
 import java.util.List;
+
+import static com.android.mis.R.color.details_background1;
 
 /**
  * Created by rajat on 21/3/17.
@@ -24,6 +27,7 @@ public class EducationDetailsAdapter extends RecyclerView.Adapter<EducationDetai
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView examination,course,college,year,grade,division;
+        public Layout layout;
 
         public MyViewHolder(View view) {
             super(view);
@@ -45,7 +49,6 @@ public class EducationDetailsAdapter extends RecyclerView.Adapter<EducationDetai
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.education_details_item, parent, false);
-
         return new MyViewHolder(itemView);
     }
 
@@ -58,6 +61,10 @@ public class EducationDetailsAdapter extends RecyclerView.Adapter<EducationDetai
         holder.year.setText(member.getYear());
         holder.grade.setText(member.getGrade());
         holder.division.setText(member.getDivision());
+        if(member.getTag()%2 == 0)
+        holder.itemView.setBackgroundResource(R.color.details_background1);
+        else
+            holder.itemView.setBackgroundResource(R.color.details_background2);
     }
 
     @Override

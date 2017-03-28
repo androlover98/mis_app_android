@@ -115,7 +115,9 @@ public class HomeActivity extends AppCompatActivity
                 break;
 
             case R.id.view_course_structure:
-                break;
+                Util.moveToActivity(HomeActivity.this,CourseStructureActivity.class,null);
+                return true;
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

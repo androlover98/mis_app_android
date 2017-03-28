@@ -29,13 +29,13 @@ public class StuFamilyDetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fee_details_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.stu_family_details, container, false);
 
-        TextView f_name = (TextView)rootView.findViewById(R.id.father_name);
+        TextView f_name = (TextView)rootView.findViewById(R.id.f_name);
         TextView f_occupation = (TextView)rootView.findViewById(R.id.f_occupation);
         TextView fgi = (TextView)rootView.findViewById(R.id.fgi);
         TextView fmo = (TextView)rootView.findViewById(R.id.pmn);
-        TextView m_name = (TextView)rootView.findViewById(R.id.mother_name);
+        TextView m_name = (TextView)rootView.findViewById(R.id.m_name);
         TextView m_occupation = (TextView)rootView.findViewById(R.id.m_occupation);
         TextView mgi = (TextView)rootView.findViewById(R.id.mgi);
         TextView pln = (TextView)rootView.findViewById(R.id.pln);

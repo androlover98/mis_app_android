@@ -5,6 +5,7 @@
     android:background="@color/details_background1">
 
     <RelativeLayout
+        android:id="@+id/item"
         android:padding="@dimen/padding_in_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,8 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="(Spouse)"
+                android:textStyle="bold"
                 android:textColor="@color/grey_dark"
-                android:textSize="@dimen/medium_text"
+                android:textSize="@dimen/small_text"
                 />
 
             <LinearLayout
@@ -57,13 +59,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:textSize="@dimen/key_size"
-                        android:text="Date Of Birth : " />
+                        android:textSize="@dimen/small_text"
+                        android:text="Date Of Birth : "
+                        android:textStyle="bold"
+                        />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="right"
-                        android:textSize="@dimen/val_size"
+                        android:textSize="@dimen/small_text"
                         android:id="@+id/dob"
                         android:text="NA"/>
                 </LinearLayout>
@@ -77,13 +81,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:textSize="@dimen/key_size"
-                    android:text="Profession : " />
+                    android:textSize="@dimen/small_text"
+                    android:text="Profession : "
+                    android:textStyle="bold"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="@dimen/val_size"
+                    android:textSize="@dimen/small_text"
                     android:id="@+id/profession"
                     android:text="NA"/>
                 </LinearLayout>
@@ -97,13 +103,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:textSize="@dimen/key_size"
-                        android:text="Postal Address : " />
+                        android:textSize="@dimen/small_text"
+                        android:text="Postal Address : "
+                        android:textStyle="bold"
+                        />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="right"
-                        android:textSize="@dimen/val_size"
+                        android:textSize="@dimen/small_text"
                         android:id="@+id/address"
                         android:text="NA"/>
                 </LinearLayout>
@@ -123,7 +131,7 @@
                     android:layout_height="match_parent"
                     android:text="ACTIVE"
                     android:textColor="@color/green"
-                    android:textSize="@dimen/medium_text"
+                    android:textSize="@dimen/small_text"
                     android:textStyle="bold"
                     />
             </LinearLayout>

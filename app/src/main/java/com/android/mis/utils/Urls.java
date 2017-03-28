@@ -14,6 +14,7 @@ public class Urls {
     public static final String sub_base = "api/v1/";
     public static final String parsing_error_message = "Parsing Error";
     public static final String error_connection_message = "Error in Connection";
+    public static final String image_base_path = server_protocol+"://"+host+"/mis_45/assets/images/";
     /*
         Login parameters username and password
         Method POST
@@ -32,6 +33,23 @@ public class Urls {
      */
     public static final String view_details_url = base_url+sub_base+"viewdetails";
 
+    /*
+        Parameters : None
+        Method GET
+     */
+    public static final String departments_url = base_url+sub_base+"coursestructure/departments";
+
+    /*
+        Parameters : dept_id
+        Method GET
+     */
+    public static final String courses_url = base_url+sub_base+"coursestructure/coursesdetails";
+
+    /*
+       Parameters :dept_id,session(e.g 2014_2015),semester,branch_id,course
+       Method GET
+     */
+    public static final String view_course_url = base_url+sub_base+"coursestructure/viewcourse";
 
     public Urls(){
 

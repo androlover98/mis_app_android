@@ -7,11 +7,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.mis.R;
+import com.android.mis.utils.CircleTransform;
+import com.android.mis.utils.Urls;
 import com.android.mis.utils.Util;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,9 +46,13 @@ public class PersonalDetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView;
         try {
+
             if(auth.contentEquals("emp"))
             {
                 rootView = inflater.inflate(R.layout.emp_personal_details, container, false);
+                ImageView profile_pic = (ImageView)rootView.findViewById(R.id.profile_pic);
+                Picasso.with(getActivity().getApplicationContext()).load(Urls.image_base_path+personalDetails.getString("photopath")).transform(new CircleTransform()).placeholder(R.mipmap.default_usr).error(R.mipmap.default_usr).resize(250,250).into(profile_pic);
+
                 TextView name = (TextView)rootView.findViewById(R.id.name);
                 name.setText(personalDetails.getString("salutation")+" "+personalDetails.getString("first_name")+" "+personalDetails.getString("middle_name")+" "+personalDetails.getString("last_name"));
 
@@ -102,6 +110,11 @@ public class PersonalDetailsFragment extends Fragment {
                 return rootView;
             }else{
                 rootView = inflater.inflate(R.layout.stu_personal_details, container, false);
+
+                ImageView profile_pic = (ImageView)rootView.findViewById(R.id.profile_pic);
+                Picasso.with(getActivity().getApplicationContext()).load(Urls.image_base_path+personalDetails.getString("image_path")).transform(new CircleTransform()).placeholder(R.mipmap.default_usr).error(R.mipmap.default_usr).resize(250,250).into(profile_pic);
+
+
                 TextView name = (TextView)rootView.findViewById(R.id.name);
                 name.setText(personalDetails.getString("name"));
 

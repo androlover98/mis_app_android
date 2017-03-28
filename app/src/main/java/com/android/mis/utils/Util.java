@@ -50,6 +50,8 @@ public class Util {
     public static void moveToActivity(Activity source, Class destination, Bundle bundle)
     {
         Intent i = new Intent(source,destination);
+        if(bundle!=null)
+        i.putExtras(bundle);
         source.startActivity(i);
     }
 

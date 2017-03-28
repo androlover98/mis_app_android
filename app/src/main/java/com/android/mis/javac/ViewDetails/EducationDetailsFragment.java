@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.controllers.EducationAdapter;
 import com.android.mis.controllers.EducationDetailsAdapter;
 import com.android.mis.models.Education;
 
@@ -39,7 +38,7 @@ public class EducationDetailsFragment extends Fragment {
         for (int i=0;i<educationDetails.length();i++)
         {
             JSONObject education = educationDetails.getJSONObject(i);
-            educationDetailsArrayList.add(new Education(education.getString("exam"),education.getString("specialization"),education.getString("institute"),education.getString("year"),education.getString("grade"),education.getString("division")));
+            educationDetailsArrayList.add(new Education(education.getString("exam"),education.getString("specialization"),education.getString("institute"),education.getString("year"),education.getString("grade"),education.getString("division"),i));
         }
     }
 
@@ -57,9 +56,6 @@ public class EducationDetailsFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-
         return rootView;
-
     }
-
 }
