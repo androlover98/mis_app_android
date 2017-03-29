@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import com.android.mis.javac.LoginActivity;
+import com.android.mis.javac.Login.LoginActivity;
 
 import java.util.HashMap;
 

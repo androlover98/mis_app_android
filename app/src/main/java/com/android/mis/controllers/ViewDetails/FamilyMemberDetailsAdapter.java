@@ -1,9 +1,7 @@
-package com.android.mis.controllers;
+package com.android.mis.controllers.ViewDetails;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Movie;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.models.FamilyMember;
+import com.android.mis.models.ViewDetails.FamilyMember;
 import com.android.mis.utils.CircleTransform;
 import com.android.mis.utils.Urls;
 import com.squareup.picasso.Picasso;

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.models.Address;
+import com.android.mis.models.ViewDetails.Address;
 
 import org.json.JSONArray;
 import org.json.JSONException;

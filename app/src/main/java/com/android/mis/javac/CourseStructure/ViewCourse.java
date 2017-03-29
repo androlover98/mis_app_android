@@ -1,4 +1,4 @@
-package com.android.mis.javac;
+package com.android.mis.javac.CourseStructure;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -6,18 +6,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,29 +19,17 @@ import android.widget.Toast;
 
 import com.android.mis.R;
 import com.android.mis.controllers.ViewPagerAdapter;
-import com.android.mis.javac.ViewDetails.AddressDetailsFragment;
-import com.android.mis.javac.ViewDetails.AdmissionDetailsFragment;
-import com.android.mis.javac.ViewDetails.BankDetailsFragment;
-import com.android.mis.javac.ViewDetails.EducationDetailsFragment;
-import com.android.mis.javac.ViewDetails.EmpFamilyDetailsFragment;
-import com.android.mis.javac.ViewDetails.FeeDetailsFragment;
-import com.android.mis.javac.ViewDetails.PersonalDetailsFragment;
-import com.android.mis.javac.ViewDetails.StayDetailsFragment;
-import com.android.mis.javac.ViewDetails.StuFamilyDetailsFragment;
-import com.android.mis.javac.ViewDetails.ViewDetails;
 import com.android.mis.utils.Callback;
 import com.android.mis.utils.NetworkRequest;
 import com.android.mis.utils.SessionManagement;
 import com.android.mis.utils.Urls;
 import com.android.mis.utils.Util;
-import com.android.volley.Cache;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class ViewCourse extends AppCompatActivity implements Callback {
 

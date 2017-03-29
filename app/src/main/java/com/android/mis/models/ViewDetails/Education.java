@@ -1,4 +1,4 @@
-package com.android.mis.models;
+package com.android.mis.models.ViewDetails;
 
 /**
  * Created by rajat on 21/3/17.

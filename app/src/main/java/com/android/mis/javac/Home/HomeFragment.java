@@ -1,12 +1,8 @@
-package com.android.mis.javac;
+package com.android.mis.javac.Home;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +11,6 @@ import android.widget.TextView;
 
 import com.android.mis.R;
 import com.android.mis.controllers.ViewPagerAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 
 public class HomeFragment extends Fragment{

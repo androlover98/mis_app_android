@@ -1,8 +1,7 @@
-package com.android.mis.javac;
+package com.android.mis.javac.Home;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.mis.R;
-import com.android.mis.controllers.PostAdapter;
-import com.android.mis.models.Post;
-import com.android.mis.models.PostList;
+import com.android.mis.controllers.Home.PostAdapter;
+import com.android.mis.models.Home.Post;
+import com.android.mis.models.Home.PostList;
 
 import java.util.ArrayList;
 import java.util.List;

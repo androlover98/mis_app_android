@@ -40,10 +40,10 @@
 
         <!-- Defining the login activity -->
         <activity
-            android:name=".javac.LoginActivity"
+            android:name=".javac.Login.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".javac.HomeActivity"
+            android:name=".javac.Home.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -51,11 +51,12 @@
             android:label="@string/title_activity_view_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".javac.CourseStructureActivity"
+            android:name=".javac.CourseStructure.CourseStructureActivity"
             android:label="@string/title_activity_course_structure"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".javac.ViewCourse"
+            android:name=".javac.CourseStructure.ViewCourse"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_view_course"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

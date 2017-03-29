@@ -9,12 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.controllers.FamilyMemberDetailsAdapter;
-import com.android.mis.controllers.StayDetailsAdapter;
-import com.android.mis.models.StayDetails;
+import com.android.mis.controllers.ViewDetails.StayDetailsAdapter;
+import com.android.mis.models.ViewDetails.StayDetails;
 
 import org.json.JSONArray;
 import org.json.JSONException;

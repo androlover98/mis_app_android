@@ -1,4 +1,4 @@
-package com.android.mis.controllers;
+package com.android.mis.controllers.Home;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import com.afollestad.sectionedrecyclerview.SectionedRecyclerViewAdapter;
 import com.android.mis.R;
-import com.android.mis.models.Post;
-import com.android.mis.models.PostList;
+import com.android.mis.models.Home.Post;
+import com.android.mis.models.Home.PostList;
 
 import java.util.ArrayList;
 import java.util.List;

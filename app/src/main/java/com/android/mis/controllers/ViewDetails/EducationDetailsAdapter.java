@@ -1,20 +1,16 @@
-package com.android.mis.controllers;
+package com.android.mis.controllers.ViewDetails;
 
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.models.Education;
+import com.android.mis.models.ViewDetails.Education;
 
 import java.util.List;
-
-import static com.android.mis.R.color.details_background1;
 
 /**
  * Created by rajat on 21/3/17.

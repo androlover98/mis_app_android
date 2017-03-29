@@ -1,4 +1,4 @@
-package com.android.mis.controllers;
+package com.android.mis.controllers.ViewDetails;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.models.StayDetails;
+import com.android.mis.models.ViewDetails.StayDetails;
 
 import java.util.List;
 

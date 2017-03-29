@@ -1,4 +1,4 @@
-package com.android.mis.controllers;
+package com.android.mis.controllers.CourseStructure;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,8 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.javac.ViewCourse;
-import com.android.mis.models.Course;
+import com.android.mis.javac.CourseStructure.ViewCourse;
+import com.android.mis.models.CourseStructure.Course;
 import com.android.mis.utils.Util;
 
 import java.util.List;

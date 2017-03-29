@@ -1,4 +1,4 @@
-package com.android.mis.models;
+package com.android.mis.models.Home;
 
 /**
  * Created by rajat on 8/3/17.

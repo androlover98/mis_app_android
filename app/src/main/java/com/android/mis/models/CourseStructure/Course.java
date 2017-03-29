@@ -1,4 +1,4 @@
-package com.android.mis.models;
+package com.android.mis.models.CourseStructure;
 
 import android.widget.ArrayAdapter;
 

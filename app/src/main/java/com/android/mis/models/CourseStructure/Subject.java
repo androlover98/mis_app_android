@@ -1,4 +1,4 @@
-package com.android.mis.models;
+package com.android.mis.models.CourseStructure;
 
 /**
  * Created by rajat on 26/3/17.

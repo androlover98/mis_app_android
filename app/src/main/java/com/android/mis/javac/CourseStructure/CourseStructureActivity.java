@@ -1,4 +1,4 @@
-package com.android.mis.javac;
+package com.android.mis.javac.CourseStructure;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,22 +8,17 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.android.mis.R;
-import com.android.mis.controllers.CoursesAdapter;
+import com.android.mis.controllers.CourseStructure.CoursesAdapter;
 import com.android.mis.controllers.SpinnerAdapter;
-import com.android.mis.controllers.StayDetailsAdapter;
-import com.android.mis.javac.ViewDetails.ViewDetails;
-import com.android.mis.models.Course;
-import com.android.mis.models.Department;
+import com.android.mis.models.CourseStructure.Course;
+import com.android.mis.models.CourseStructure.Department;
 import com.android.mis.utils.Callback;
 import com.android.mis.utils.NetworkRequest;
 import com.android.mis.utils.SessionManagement;

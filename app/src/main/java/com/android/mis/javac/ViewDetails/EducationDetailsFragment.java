@@ -9,11 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.android.mis.R;
-import com.android.mis.controllers.EducationDetailsAdapter;
-import com.android.mis.models.Education;
+import com.android.mis.controllers.ViewDetails.EducationDetailsAdapter;
+import com.android.mis.models.ViewDetails.Education;
 
 import org.json.JSONArray;
 import org.json.JSONException;

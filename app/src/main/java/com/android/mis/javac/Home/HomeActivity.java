@@ -1,4 +1,4 @@
-package com.android.mis.javac;
+package com.android.mis.javac.Home;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.mis.R;
+import com.android.mis.javac.CourseStructure.CourseStructureActivity;
 import com.android.mis.javac.ViewDetails.ViewDetails;
 import com.android.mis.utils.Callback;
 import com.android.mis.utils.NetworkRequest;
