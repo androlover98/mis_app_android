@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.mis.R;
+import com.android.mis.javac.Attendance.AttendancePreDetails;
 import com.android.mis.javac.CourseStructure.CourseStructureActivity;
 import com.android.mis.javac.ViewDetails.ViewDetails;
 import com.android.mis.utils.Callback;
@@ -110,6 +111,7 @@ public class HomeActivity extends AppCompatActivity
                 break;
 
             case R.id.view_attendance:
+                Util.moveToActivity(HomeActivity.this,AttendancePreDetails.class,null);
                 break;
 
             case R.id.view_defaulter_list:

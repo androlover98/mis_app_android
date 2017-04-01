@@ -15,6 +15,7 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONException;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -186,17 +187,24 @@ public class NetworkRequest {
     }
 
     private String generateRequestKeyFromUrlAndParams(){
+
         String req_key = "",param_string = "";
 
-        if(params != null)
-        {
-            for (HashMap.Entry<String, String> entry : params.entrySet())
+        try{
+            if(params != null)
             {
-                param_string += entry.getKey()+"="+entry.getValue()+"&";
+                for (HashMap.Entry<String, String> entry : params.entrySet())
+                {
+                    param_string += entry.getKey()+"="+ URLEncoder.encode(entry.getValue(),"UTF-8")+"&";
+                }
+                url = url+"?"+param_string;
+                url = url.substring(0,url.length()-1);
             }
-            url = url+"?"+param_string;
-            url = url.substring(0,url.length()-1);
+        }catch (Exception e)
+        {
+            Log.d("Exception in NR",e.toString());
         }
+
         Log.d("url",url);
         Log.d("params",param_string);
         String req = url+param_string;

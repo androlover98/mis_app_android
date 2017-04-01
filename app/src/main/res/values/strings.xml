@@ -32,4 +32,5 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_course_structure">Course Structure</string>
     <string name="title_activity_view_course">ViewCourse</string>
+    <string name="attendance">Attendance</string>
 </resources>

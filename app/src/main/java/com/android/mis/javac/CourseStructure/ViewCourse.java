@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class ViewCourse extends AppCompatActivity implements Callback {
 
@@ -151,6 +152,10 @@ public class ViewCourse extends AppCompatActivity implements Callback {
         View view = getLayoutInflater().inflate(R.layout.custom_tab,null);
         TextView tv_title = (TextView) view.findViewById(R.id.tv_title);
         TextView tv_count = (TextView) view.findViewById(R.id.tv_count);
+        String parts[] = tabTitle.get(pos).split("_");
+        if(parts.length > 1)
+            tv_title.setText("Semester : "+parts[0]+'('+"group"+parts[1]+')');
+        else
         tv_title.setText("Semester : "+tabTitle.get(pos));
         tv_count.setVisibility(View.GONE);
         return view;
@@ -189,10 +194,14 @@ public class ViewCourse extends AppCompatActivity implements Callback {
             {
                 tabLayout.setVisibility(View.VISIBLE);
                 JSONObject details = json.getJSONObject("course_details");
-                ArrayList<String> keysList = new ArrayList<>();
-                for(int i=Integer.parseInt(start_sem);i<=Integer.parseInt(end_sem);i++)
-                {
-                    keysList.add(Integer.toString(i));
+                JSONObject course = details.getJSONObject("course");
+                JSONObject subjects = course.getJSONObject("subjects");
+                JSONObject subjects_details = subjects.getJSONObject("group_details");
+                Iterator keysToCopyIterator = subjects_details.keys();
+                ArrayList<String> keysList = new ArrayList<String>();
+                while(keysToCopyIterator.hasNext()) {
+                    String key = (String) keysToCopyIterator.next();
+                    keysList.add(key.toUpperCase());
                 }
                 setupViewPager(mViewPager,keysList,details);
             }
