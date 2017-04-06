@@ -60,12 +60,11 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".javac.Attendance.ViewAttendance"
-            android:label="@string/title_activity_login"
+            android:label="@string/title_activity_attendance_details"
             />
         <activity android:name=".javac.Attendance.AttendancePreDetails"
             android:label="@string/attendance"
-            ></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+            ></activity>
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

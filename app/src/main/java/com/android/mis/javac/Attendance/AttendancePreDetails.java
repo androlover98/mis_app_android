@@ -73,11 +73,13 @@ public class AttendancePreDetails extends AppCompatActivity implements AdapterVi
         session_list.add("Monsoon");
         session_list.add("Winter");
         session_list.add("Summer");
+        semester_list.add("Select");
 
         fetchDetails(0);
 
 
-        session_spinner.setOnItemSelectedListener(this);ArrayAdapter<String> sessionAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_spinner_item, session_list);
+        session_spinner.setOnItemSelectedListener(this);
+        ArrayAdapter<String> sessionAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_spinner_item, session_list);
         ArrayAdapter<String> semesterAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_spinner_item, semester_list);
 
         session_spinner.setAdapter(sessionAdapter);
@@ -185,7 +187,7 @@ public class AttendancePreDetails extends AppCompatActivity implements AdapterVi
                     }
                 } catch (Exception e) {
                     Log.e("Exception", e.toString());
-                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();
+                 //   Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();
                     Util.viewSnackbar(findViewById(android.R.id.content), Urls.parsing_error_message);
                 }
 

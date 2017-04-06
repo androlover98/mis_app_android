@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="Attendance Enquiry"
                 android:padding="@dimen/padding_in_details"
+                android:textSize="@dimen/large_text"
                 android:textColor="@color/white_overlay"
                 android:textStyle="bold"
                 android:background="@color/colorPrimaryDark"/>
@@ -69,7 +70,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
@@ -91,7 +92,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
@@ -114,9 +115,9 @@
                     android:id="@+id/submit_button"
                     style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:background="@drawable/buttonshape"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="25dp"
                     android:textColor="@color/button_text"
                     android:textSize="@dimen/button_text_size"
                     android:text="Submit" />

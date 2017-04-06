@@ -7,7 +7,7 @@ package com.android.mis.utils;
 public class Urls {
 
     public static final String host = "10.0.2.2";
-    public static final String host_mobile = "192.168.43.30";
+    public static final String host_mobile = "172.16.100.205";
     public static final String server_port_no = "3000";
     public static final String server_protocol = "http";
     public static final String base_url = server_protocol+"://"+host+":"+server_port_no+"/";
@@ -66,11 +66,16 @@ public class Urls {
     public static final String semester_url = base_url+sub_base+"attendance/semester";
 
     /*
-        Paramters : session,session_year,semester
+        Parameters : session,session_year,semester
         Method GET
      */
     public static final String view_attendance_url = base_url+sub_base+"attendance/studentattendance";
 
+    /*
+        Parameters : map_id,subject_id
+         Method GET
+     */
+    public static final String view_detailed_attendance_url = base_url+sub_base+"attendance/subjectattendance";
 
     public Urls(){
 

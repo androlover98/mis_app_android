@@ -42,6 +42,8 @@ public class ViewAttendance extends AppCompatActivity implements Callback{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance_details);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         extras = getIntent().getExtras();
         params = new HashMap<>();
         subjectAttendanceItemsList = new ArrayList<>();
@@ -85,12 +87,13 @@ public class ViewAttendance extends AppCompatActivity implements Callback{
             JSONObject json = new JSONObject(result);
             if (json.getBoolean("success") == true) {
                 JSONObject attendance = json.getJSONObject("attendance");
+                int map_id = attendance.getInt("map_id");
                 JSONArray subject_array = attendance.getJSONArray("subjects");
                 for(int i=0;i<subject_array.length();i++)
                 {
                     JSONObject subject_attendance = subject_array.getJSONObject(i);
-                    Toast.makeText(getApplicationContext(),subject_attendance.getString("subject_id"),Toast.LENGTH_LONG).show();
-                    subjectAttendanceItemsList.add(new SubjectAttendanceItem(subject_attendance.getString("subject_id"),subject_attendance.getString("name"),subject_attendance.getString("id"),subject_attendance.getInt("total_absent"),subject_attendance.getInt("total_class"),i));
+                  //  Toast.makeText(getApplicationContext(),subject_attendance.getString("subject_id"),Toast.LENGTH_LONG).show();
+                    subjectAttendanceItemsList.add(new SubjectAttendanceItem(subject_attendance.getString("subject_id"),subject_attendance.getString("name"),subject_attendance.getString("id"),subject_attendance.getInt("total_absent"),subject_attendance.getInt("total_class"),i,map_id));
                 }
 
                 ViewAttendanceAdapter mAdapter = new ViewAttendanceAdapter(subjectAttendanceItemsList,getApplicationContext(),ViewAttendance.this);
@@ -102,8 +105,9 @@ public class ViewAttendance extends AppCompatActivity implements Callback{
                 Util.viewSnackbar(findViewById(android.R.id.content), json.getString("err_msg"));
             }
         } catch (Exception e) {
+            Log.d("Result",result);
             Log.e("Exception", e.toString());
-            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();
+       //     Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();
             Util.viewSnackbar(findViewById(android.R.id.content), Urls.parsing_error_message);
         }
     }

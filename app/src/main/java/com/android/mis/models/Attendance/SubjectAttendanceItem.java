@@ -5,10 +5,10 @@ package com.android.mis.models.Attendance;
  */
 
 public class SubjectAttendanceItem {
-    private String subjectId,name,id,totalAbsent,totalClass;
+    private String subjectId,name,id,totalAbsent,totalClass,mapId;
     private int tag;
 
-    public SubjectAttendanceItem(String subjectId,String name,String id,String totalAbsent,String totalClass,int tag)
+    public SubjectAttendanceItem(String subjectId,String name,String id,String totalAbsent,String totalClass,int tag,int map_id)
     {
         this.subjectId = subjectId;
         this.name = name;
@@ -16,9 +16,10 @@ public class SubjectAttendanceItem {
         this.totalAbsent = totalAbsent;
         this.totalClass = totalClass;
         this.tag = tag;
+        this.mapId = Integer.toString(map_id);
     }
 
-    public SubjectAttendanceItem(String subjectId,String name,String id,int totalAbsent,int totalClass,int tag)
+    public SubjectAttendanceItem(String subjectId,String name,String id,int totalAbsent,int totalClass,int tag,int map_id)
     {
         this.subjectId = subjectId;
         this.name = name;
@@ -29,6 +30,7 @@ public class SubjectAttendanceItem {
         else
         this.totalClass = Integer.toString(totalClass);
         this.tag = tag;
+        this.mapId = Integer.toString(map_id);
     }
 
     public String getSubjectId(){
@@ -53,5 +55,9 @@ public class SubjectAttendanceItem {
 
     public int getTag(){
         return tag;
+    }
+
+    public String getMapId(){
+        return mapId;
     }
 }
