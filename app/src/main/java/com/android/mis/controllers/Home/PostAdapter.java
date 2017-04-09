@@ -6,13 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.sectionedrecyclerview.SectionedRecyclerViewAdapter;
 import com.android.mis.R;
 import com.android.mis.models.Home.Post;
+import com.android.mis.models.Home.Post1;
 import com.android.mis.models.Home.PostList;
+import com.android.mis.utils.Urls;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,18 +52,24 @@ public class PostAdapter extends SectionedRecyclerViewAdapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int section, int relativePosition, int absolutePosition) {
 
-        ArrayList<Post> itemsInSection = allData.get(section).getAllPostsOnGivenDate();
+        ArrayList<Post1> itemsInSection = allData.get(section).getAllPostsOnGivenDate();
 
-        Post itemName = itemsInSection.get(relativePosition);
+        Post1 itemName = itemsInSection.get(relativePosition);
 
         ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
 
-        itemViewHolder.userOfPost.setText(itemName.getUserOfPost());
-        itemViewHolder.identificationUserOfPost.setText(itemName.getTypeOfUserOfPost());
-        itemViewHolder.postDetails.setText(itemName.getDetailsOfPost());
-        itemViewHolder.timeOfPost.setText(itemName.getTimeOfPost());
-        itemViewHolder.icon.setImageResource(itemName.getImageDrawable());
+        itemViewHolder.userOfPost.setText(itemName.getPostIssuedBy());
         itemViewHolder.multiPurposeButton.setText("Download Attachment");
+
+        if(itemName.getPostIssuedBy().contentEquals(Urls.no_post_message))
+        {
+            itemViewHolder.clock.setVisibility(View.GONE);
+            ((ItemViewHolder) holder).multiPurposeButton.setVisibility(View.GONE);
+        }
+        itemViewHolder.identificationUserOfPost.setText(itemName.getPostAuthName());
+        itemViewHolder.postDetails.setText(itemName.getPostSub());
+        itemViewHolder.timeOfPost.setText(itemName.getPostIssueTime());
+        itemViewHolder.icon.setImageResource(itemName.getImageDrawable());
         // Try to put a image . for sample i set background color in xml layout file
         // itemViewHolder.itemImage.setBackgroundColor(Color.parseColor("#01579b"));
     }
@@ -96,6 +105,7 @@ public class PostAdapter extends SectionedRecyclerViewAdapter<RecyclerView.ViewH
 
         TextView userOfPost,identificationUserOfPost,postDetails,timeOfPost;
         Button multiPurposeButton;
+        ImageView clock;
         ImageButton icon;
 
 
@@ -103,6 +113,7 @@ public class PostAdapter extends SectionedRecyclerViewAdapter<RecyclerView.ViewH
             super(itemView);
             userOfPost = (TextView) itemView.findViewById(R.id.user_of_post);
             timeOfPost = (TextView)itemView.findViewById(R.id.time_of_post);
+            clock = (ImageView)itemView.findViewById(R.id.clock);
             identificationUserOfPost = (TextView)itemView.findViewById(R.id.identification_user_of_post);
             postDetails = (TextView)itemView.findViewById(R.id.post_details);
             multiPurposeButton = (Button)itemView.findViewById(R.id.multi_purpose_button);

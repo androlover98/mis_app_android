@@ -15,6 +15,7 @@ public class Urls {
     public static final String parsing_error_message = "Parsing Error";
     public static final String empty_message = "Please fill all the fields";
     public static final String error_connection_message = "Error in Connection";
+    public static final String no_post_message = "No related posts found";
     public static final String image_base_path = server_protocol+"://"+host+"/mis_45/assets/images/";
     /*
         Login parameters username and password
@@ -76,6 +77,18 @@ public class Urls {
          Method GET
      */
     public static final String view_detailed_attendance_url = base_url+sub_base+"attendance/subjectattendance";
+
+    /*
+        Parameters : none
+        Method GET
+     */
+    public static final String new_post_count_url = base_url+sub_base+"information/counts";
+
+    /*
+        Parameters : none
+        Method GET
+     */
+    public static final String post_details_url = base_url+sub_base+"information/postdetails";
 
     public Urls(){
 

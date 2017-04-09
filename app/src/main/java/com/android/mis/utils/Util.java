@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.mis.R;
 import com.androidadvance.topsnackbar.TSnackbar;
 
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -70,5 +71,14 @@ public class Util {
         return hmap;
     }
 
+    public static String getDateFromDateTime(String datetime)
+    {
+        return datetime.split("T")[0];
+    }
+
+    public static String getTimeFromDateTime(String datetime)
+    {
+        return datetime.split("T")[1].split(":")[0]+":"+datetime.split("T")[1].split(":")[1];
+    }
 
 }

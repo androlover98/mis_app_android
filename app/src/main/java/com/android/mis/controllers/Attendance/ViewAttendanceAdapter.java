@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -52,6 +54,7 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<com.android.mis.
         public Button details;
         public ProgressBar progressBar1,progressBar2,progressBar3;
         public TextView p1_label,p2_label,p3_label;
+        public View condLayout,mainLayout;
 
         public MyViewHolder(View view) {
             super(view);
@@ -64,6 +67,8 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<com.android.mis.
             p1_label = (TextView)view.findViewById(R.id.p1_label1);
             p2_label = (TextView)view.findViewById(R.id.p1_label2);
             p3_label = (TextView)view.findViewById(R.id.p1_label3);
+            condLayout = view.findViewById(R.id.cond_layout);
+            mainLayout = view.findViewById(R.id.main_layout);
         }
     }
 
@@ -104,6 +109,9 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<com.android.mis.
 
 
         if(member.getTotalClass().contentEquals("class not started")) {
+            holder.condLayout.setVisibility(View.VISIBLE);
+            holder.mainLayout.setVisibility(View.GONE);
+            holder.details.setVisibility(View.GONE);
             return;
         }
 
@@ -219,10 +227,7 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<com.android.mis.
         status_stu.setTextSize(12);
         status_stu.setBackgroundResource(R.drawable.table_border);
         row.addView(status_stu);
-
         row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-
-
         return row;
     }
 

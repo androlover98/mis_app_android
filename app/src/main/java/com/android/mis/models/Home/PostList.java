@@ -8,13 +8,13 @@ import java.util.ArrayList;
 
 public class PostList {
     private String date;
-    private ArrayList<Post> allPostsOnGivenDate;
+    private ArrayList<Post1> allPostsOnGivenDate;
 
     public PostList(){
 
     }
 
-    public PostList(String date,ArrayList<Post> allPostsOnDate){
+    public PostList(String date,ArrayList<Post1> allPostsOnDate){
         this.date = date;
         this.allPostsOnGivenDate = allPostsOnDate;
     }
@@ -27,7 +27,7 @@ public class PostList {
         this.date = section;
     }
 
-    public ArrayList<Post> getAllPostsOnGivenDate(){
+    public ArrayList<Post1> getAllPostsOnGivenDate(){
         return this.allPostsOnGivenDate;
     }
 }
